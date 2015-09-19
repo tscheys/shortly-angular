@@ -1,10 +1,13 @@
 <div id='container'>
   <h1> LINKS MUDDAFUKKA</h1>
-  <ul>
-    <li ng-repeat = 'link in data.links'>
-      <h2>{{link.title}}</h2>
-      <p>{{link.visits}} Visits</p>
-      <a href='{{link.url}}'>{{link.base_url}}{{link.code}}</a>
-    </li>
-  </ul>
+    <input type="text" ng-model="filter">
+    <div class="link" ng-repeat = 'link in data.links | filter: filter | orderBy: visits'>
+      <img src='http://www.google.com/s2/favicons?domain={{link.url}}'/>
+      <div class='info'>
+        <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
+        <div class='title'>{{link.title}}</div>
+        <div class='original'>{{link.url}}</div>
+        <a href='{{link.base_url}}/{{link.code}}'>{{link.base_url}}/{{link.code}}</a>
+      </div>
+    </div>
 </div>

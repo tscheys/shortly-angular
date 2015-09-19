@@ -5,6 +5,7 @@ var util = require('../config/utils.js');
 
 module.exports = {
   findUrl: function (req, res, next, code) {
+    console.log('we are trying to find the url inside findurl func')
     var findLink = Q.nbind(Link.findOne, Link);
     findLink({code: code})
       .then(function (link) {
