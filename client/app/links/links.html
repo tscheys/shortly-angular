@@ -1,13 +1,27 @@
 <div id='container'>
-  <h1> LINKS MUDDAFUKKA</h1>
-    <input type="text" ng-model="filter">
-    <div class="link" ng-repeat = 'link in data.links | filter: filter | orderBy: visits'>
-      <img src='http://www.google.com/s2/favicons?domain={{link.url}}'/>
-      <div class='info'>
-        <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
-        <div class='title'>{{link.title}}</div>
-        <div class='original'>{{link.url}}</div>
-        <a href='{{link.base_url}}/{{link.code}}'>{{link.base_url}}/{{link.code}}</a>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo right"> Shortly</a>
+        <ul class="left hide-on-med-and-down">
+          <li class="active"><a class="index" href='#links'>All Links</a></li>
+          <li><a href='#shorten' class='create'>Shorten</a></li>
+          <li><a href='#signin' class='logout'>Logout</a></li>
+        </ul>
       </div>
-    </div>
+    </nav>
+  <div class="container">
+    <h2>Links</h2>
+    <input type="text" ng-model="filter" placeholder="Search links...">
+    <ul>
+      <li class="link" ng-repeat = 'link in data.links | filter: filter | orderBy: visits'>
+        <img src='http://www.google.com/s2/favicons?domain={{link.url}}'/>
+        <div class='info'>
+          <div class='visits'><span class='count'>{{link.visits}}</span>Visits</div>
+          <div class='title'>{{link.title}}</div>
+          <div class='original'>{{link.url}}</div>
+          <a href='{{link.base_url}}/{{link.code}}'>{{link.base_url}}/{{link.code}}</a>
+        </div>
+      </li>
+    </ul>
+  </div>
 </div>

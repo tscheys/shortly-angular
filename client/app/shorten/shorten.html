@@ -1,9 +1,21 @@
 <div id='container'>
-  <h1>shorten</h1>
-  <form name="shortenForm" ng-submit='addLink()'>
-    <input type='url' ng-model='link.url'>
-    <button>Add Link</button>
-  </form>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo right"> Shortly</a>
+        <ul class="left hide-on-med-and-down">
+          <li><a href='#links' class='index'>All Links</a></li>
+          <li class="active"><a class="create" href='#shorten'>Shorten</a></li>
+          <li><a href='#signin' class='logout'>Logout</a></li>
+        </ul>
+      </div>
+    </nav>
+  <div class="container">
+    <h2>Shorten</h2>
+    <form name="shortenForm" ng-submit='addLink()'>
+      <input type='url' ng-model='link.url'>
+      <button class="waves-effect waves-light btn">Add Link</button>
+    </form>
+  </div>
 </div>
 
 
